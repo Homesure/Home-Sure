@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HomeSure — Pricing (Bangalore)</title>
+  <meta name="description" content="HomeSure — Trusted home services in Bangalore. Transparent pricing for Laundry, Home Cleaning, Repairs, Beauty-at-Home and Household Help." />
+   <link rel="icon" type="image/png" sizes="32x32" href="img/Untitled design.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/Untitled design.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#111827;
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.03);
+      --primary:#111827;
+      --success:#10b981;
+      --accent-2:#f8fafc;
+      --shadow: 0 8px 30px rgba(2,6,23,0.6);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,#f8fafc 0%, #fff 12%, #f3f7fb 100%);
+      color:#0b1220;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:#0b1220;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;
+      box-shadow: 0 6px 18px rgba(11,18,32,0.12);
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    /* Top CTA */
+    .top-cta{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:#0b1220;color:white;border:0;cursor:pointer;font-weight:600;
+      text-decoration:none;
+      box-shadow: 0 6px 18px rgba(11,18,32,0.12);
+    }
+    .btn.outline{background:transparent;border:1px solid rgba(11,18,32,0.06);color:#0b1220;font-weight:600}
+    .subtle{font-size:13px;color:var(--muted)}
+
+    /* Section header */
+    .section-title{display:flex;align-items:end;justify-content:space-between;margin:18px 0 8px}
+    .section-title h2{margin:0;font-size:18px}
+    .section-title p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Pricing grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin:18px 0 36px;
+    }
+    @media (max-width:920px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:640px){ .grid{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start} .top-cta{width:100%;justify-content:stretch} .btn{flex:1;justify-content:center} }
+
+    .card{
+      background:var(--accent-2);
+      border-radius:12px;
+      padding:18px;
+      box-shadow: var(--shadow);
+      display:flex;flex-direction:column;gap:12px;
+      transition:transform .22s ease, box-shadow .22s ease;
+      border: 1px solid rgba(11,18,32,0.04);
+    }
+    .card:hover{transform:translateY(-6px)}
+    .card .tier{display:flex;align-items:center;justify-content:space-between}
+    .price{font-size:28px;font-weight:700}
+    .per{color:var(--muted);font-size:13px}
+    ul.features{list-style:none;padding:0;margin:4px 0 0;display:flex;flex-direction:column;gap:8px}
+    ul.features li{font-size:14px;color:#111827;display:flex;gap:10px;align-items:flex-start}
+    ul.features li::before{content:'\2713';color:var(--success);font-weight:700;margin-top:2px;font-size:12px}
+
+    .muted-small{font-size:13px;color:var(--muted)}
+    .cta-row{display:flex;gap:8px;margin-top:auto;align-items:center}
+    .cta-row .btn.secondary{background:#fff;border:1px solid rgba(2,6,23,0.06);color:#111827}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#111827;color:#fff;font-size:13px;font-weight:600}
+
+    /* Tabs for service categories */
+    .tabs{display:flex;gap:10px;margin:10px 0 22px;flex-wrap:wrap}
+    .tab{padding:9px 12px;border-radius:999px;background:transparent;border:1px solid rgba(2,6,23,0.06);cursor:pointer}
+    .tab.active{background:#111827;color:#fff;border:none}
+
+    /* FAQ */
+    .faq{margin-top:28px;background:linear-gradient(180deg,#fff,#f7fbff);padding:18px;border-radius:12px;border:1px solid rgba(2,6,23,0.04)}
+    .faq h3{margin:0 0 12px}
+    .faq-item{margin-bottom:10px}
+    .question{font-weight:600}
+    .answer{color:var(--muted);font-size:14px;margin-top:6px}
+
+    footer{margin-top:40px;padding:18px 0;border-top:1px solid rgba(2,6,23,0.04);display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Utilities */
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,0.12);color:var(--success);font-weight:600;font-size:13px}
+    .price-note{font-size:13px;color:var(--muted)}
+    .highlight{color:#ff8a00;font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">HS</div>
+        <div>
+          <h1>HomeSure — Trusted Home Services (Bangalore)</h1>
+          <p class="lead">Transparent pricing for Laundry, Cleaning, Repairs, Beauty & Household Help.</p>
+        </div>
+      </div>
+
+      <div class="top-cta" aria-hidden="false">
+        <a class="btn" href="tel:+919513072123" aria-label="Call HomeSure">📞 Call Now</a>
+        <a class="btn outline" href="https://wa.me/919513072123" aria-label="WhatsApp HomeSure">💬 WhatsApp</a>
+      </div>
+    </header>
+
+    <!-- Category Tabs -->
+    <div class="section-title">
+      <div>
+        <h2>Choose a service & package</h2>
+        <p class="subtle">Simple, upfront prices — pick what fits your home.</p>
+      </div>
+      <div class="pill" aria-hidden="true">Bangalore-only offers</div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Service categories">
+      <button class="tab active" role="tab" aria-selected="true" data-cat="laundry">Laundry & Ironing</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="cleaning">Home Cleaning</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="repairs">Repairs & AC</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="beauty">Beauty at Home</button>
+      <button class="tab" role="tab" aria-selected="false" data-cat="help">Household Help</button>
+    </nav>
+
+    <!-- LAUNDRY: default visible -->
+    <section id="services">
+      <div class="grid" data-service="laundry" role="tabpanel" aria-labelledby="laundry-tab">
+        <!-- Basic -->
+        <article class="card" aria-labelledby="laundry-basic">
+          <div class="tier">
+            <div>
+              <div id="laundry-basic" style="font-weight:700">Laundry — Basic</div>
+              <div class="muted-small">Suitable for occasional clothes</div>
+            </div>
+            <div class="price">₹99 <span class="per">/ kg</span></div>
+          </div>
+          <p class="price-note">Pickup & delivery within 48 hours. Minimum 3 kg.</p>
+          <ul class="features" aria-hidden="false">
+            <li>Hygienic wash with quality detergents</li>
+            <li>Standard ironing</li>
+            <li>Eco-friendly options available</li>
+          </ul>
+
+          <div class="cta-row" aria-hidden="false">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Laundry%20Basic" aria-label="Book Laundry Basic">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Laundry Basic — ₹99/kg')">Copy price</a>
+          </div>
+        </article>
+
+        <!-- Standard -->
+        <article class="card" aria-labelledby="laundry-standard">
+          <div class="tier">
+            <div>
+              <div id="laundry-standard" style="font-weight:700">Laundry — Standard</div>
+              <div class="muted-small">Best for weekly needs</div>
+            </div>
+            <div class="price">₹89 <span class="per">/ kg</span></div>
+          </div>
+          <p class="price-note">Pickup & delivery within 24-36 hours. Minimum 5 kg.</p>
+          <ul class="features">
+            <li>Premium detergents & stain treatment</li>
+            <li>Professional ironing & folding</li>
+            <li>Priority pickup slot</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123text=Book%20Laundry%20Standard">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Laundry Standard — ₹89/kg')">Copy price</a>
+          </div>
+        </article>
+
+        <!-- Premium -->
+        <article class="card" aria-labelledby="laundry-premium">
+          <div class="tier">
+            <div>
+              <div id="laundry-premium" style="font-weight:700">Laundry — Premium</div>
+              <div class="muted-small">Ideal for delicate & premium wear</div>
+            </div>
+            <div class="price">₹129 <span class="per">/ kg</span></div>
+          </div>
+          <p class="price-note">Express 12–24 hour delivery available.</p>
+          <ul class="features">
+            <li>Gentle/delicate wash cycles</li>
+            <li>Premium fragrance & garment protection</li>
+            <li>Free garment inspection</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Laundry%20Premium">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Laundry Premium — ₹129/kg')">Copy price</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- CLEANING (hidden initially) -->
+      <div class="grid" data-service="cleaning" style="display:none" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Home Cleaning — Basic</div>
+              <div class="muted-small">Studio / 1BHK quick clean</div>
+            </div>
+            <div class="price">₹699 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">2-hour visit by trained cleaner.</p>
+          <ul class="features">
+            <li>Dusting & vacuuming</li>
+            <li>Bathroom & kitchen cleaning</li>
+            <li>Basic mopping</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Cleaning%20Basic">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Home Cleaning Basic — ₹699/visit')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Home Cleaning — Standard</div>
+              <div class="muted-small">2BHK / 3BHK regular clean</div>
+            </div>
+            <div class="price">₹1299 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">3–4 hour session with 2-person team.</p>
+          <ul class="features">
+            <li>Deep kitchen & bathroom cleaning</li>
+            <li>Carpet & upholstery spot cleaning</li>
+            <li>Window wiping (interior)</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Cleaning%20Standard">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Home Cleaning Standard — ₹1299/visit')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Home Cleaning — Deep</div>
+              <div class="muted-small">Seasonal / move-in move-out</div>
+            </div>
+            <div class="price">₹2199 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">Includes intensive scrubbing & sanitization.</p>
+          <ul class="features">
+            <li>Full deep clean & sanitization</li>
+            <li>Cobweb removal, detailed fixtures cleaning</li>
+            <li>Optional add-on: pantry & balcony</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Cleaning%20Deep">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Home Cleaning Deep — ₹2199/visit')">Copy price</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- REPAIRS -->
+      <div class="grid" data-service="repairs" style="display:none" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Plumbing — Visit Charge</div>
+              <div class="muted-small">Basic leak / fitting work</div>
+            </div>
+            <div class="price">₹499 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">Spare parts billed separately.</p>
+          <ul class="features">
+            <li>Quick diagnostics & minor repair</li>
+            <li>Verified technicians</li>
+            <li>1-week service warranty</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Plumber">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Plumbing Visit — ₹499')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Electrical — Visit Charge</div>
+              <div class="muted-small">Fittings, wiring checks</div>
+            </div>
+            <div class="price">₹499 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">Safe handling & certified staff.</p>
+          <ul class="features">
+            <li>Switch, wiring, fan & light repair</li>
+            <li>Safety-first approach</li>
+            <li>1-week warranty</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Electrician">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Electrical Visit — ₹499')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">AC Servicing</div>
+              <div class="muted-small">Split & Window AC</div>
+            </div>
+            <div class="price">₹899 <span class="per">/ unit</span></div>
+          </div>
+          <p class="price-note">Includes cleaning and basic gas check.</p>
+          <ul class="features">
+            <li>Coil cleaning, filter cleaning</li>
+            <li>Performance check & demo</li>
+            <li>Optional gas top-up charges apply</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20AC%20Service">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('AC Servicing — ₹899/unit')">Copy price</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- BEAUTY -->
+      <div class="grid" data-service="beauty" style="display:none" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Beauty — Haircut</div>
+              <div class="muted-small">Experienced stylist at home</div>
+            </div>
+            <div class="price">₹399 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">Includes styling & basic hair wash.</p>
+          <ul class="features">
+            <li>Sanitized tools</li>
+            <li>Professional stylists</li>
+            <li>On-time & polite staff</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Haircut">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Beauty Haircut — ₹399')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Beauty — Makeup</div>
+              <div class="muted-small">Party / Bridal (packages available)</div>
+            </div>
+            <div class="price">₹1999 <span class="per">/ session</span></div>
+          </div>
+          <p class="price-note">Bridal & party packages available on request.</p>
+          <ul class="features">
+            <li>Top-grade cosmetics</li>
+            <li>Trial & privacy assured</li>
+            <li>Hygiene-first policy</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Makeup">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Beauty Makeup — ₹1999')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Beauty — Manicure/Pedicure</div>
+              <div class="muted-small">Salon-style care at home</div>
+            </div>
+            <div class="price">₹499 <span class="per">/ visit</span></div>
+          </div>
+          <p class="price-note">Sanitized equipment & premium products.</p>
+          <ul class="features">
+            <li>Hand/foot care</li>
+            <li>Polish & finish</li>
+            <li>Optional nail art</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Manicure">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Manicure/Pedicure — ₹499')">Copy price</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- HELP -->
+      <div class="grid" data-service="help" style="display:none" role="tabpanel" aria-hidden="true">
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Household Help — Hourly</div>
+              <div class="muted-small">Trusted helper for chores</div>
+            </div>
+            <div class="price">₹149 <span class="per">/ hr</span></div>
+          </div>
+          <p class="price-note">Minimum 2 hours. Background-verified helpers.</p>
+          <ul class="features">
+            <li>Cooking, cleaning, elderly care</li>
+            <li>Flexible schedule</li>
+            <li>Same-day booking available</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Household%20Help">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Household Help — ₹149/hr')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Part-Time Helper (4 hrs)</div>
+              <div class="muted-small">Daily/weekly schedules</div>
+            </div>
+            <div class="price">₹499 <span class="per">/ 4 hrs</span></div>
+          </div>
+          <p class="price-note">Affordable help for regular chores.</p>
+          <ul class="features">
+            <li>Trusted & trained workforce</li>
+            <li>Flexible replacement policy</li>
+            <li>Easy subscription plans</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Part-Time%20Helper">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Part-Time Helper — ₹499/4hrs')">Copy price</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="tier">
+            <div>
+              <div style="font-weight:700">Monthly Helper (Subscription)</div>
+              <div class="muted-small">Regular helper every week</div>
+            </div>
+            <div class="price">From ₹5,999 <span class="per">/ month</span></div>
+          </div>
+          <p class="price-note">Custom plans — contact us for details.</p>
+          <ul class="features">
+            <li>Priority scheduling</li>
+            <li>Loyalty discounts</li>
+            <li>Trusted replacements</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="https://wa.me/919513072123?text=Book%20Monthly%20Helper">Book via WhatsApp</a>
+            <a class="btn secondary outline" href="#" onclick="copyPrice('Monthly Helper — From ₹5,999')">Copy price</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-heading">
+      <h3 id="faq-heading">Frequently asked questions</h3>
+
+      <div class="faq-item">
+        <div class="question">How do I book a service?</div>
+        <div class="answer">Just click "Book via WhatsApp" next to any package, or call us at <strong>+91-9513072123</strong>. We will confirm your slot and pickup details.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">Are your staff background-verified?</div>
+        <div class="answer">Yes — all our professionals undergo ID verification, basic training, and a background check before joining HomeSure.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="question">What is your satisfaction policy?</div>
+        <div class="answer">If you're not happy with any service, contact us within 24 hours and we will offer a free re-service or refund as per the policy.</div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <div style="font-weight:700">Ready to book?</div>
+        <div class="small">Call / WhatsApp: <strong>+91-9513072123</strong> · supporthomesure@gmail.com</div>
+      </div>
+      <div class="small">© <span id="year"></span> HomeSure — Bangalore</div>
+    </footer>
+  </main>
+
+  <script>
+    // Basic tab switching logic
+    const tabs = document.querySelectorAll('.tab');
+    const grids = document.querySelectorAll('.grid');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+
+        const cat = tab.dataset.cat;
+        grids.forEach(g => {
+          if (g.dataset.service === cat) {
+            g.style.display = 'grid';
+            g.setAttribute('aria-hidden','false');
+          } else {
+            g.style.display = 'none';
+            g.setAttribute('aria-hidden','true');
+          }
+        });
+        // smooth scroll to grid for mobile users
+        document.getElementById('services').scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    // Copy price helper
+    function copyPrice(text){
+      if (!navigator.clipboard) {
+        alert('Price: ' + text);
+        return;
+      }
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Copied: ' + text);
+      }).catch(()=> alert('Could not copy. Price: ' + text));
+    }
+
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
